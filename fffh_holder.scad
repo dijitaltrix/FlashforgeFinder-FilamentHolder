@@ -4,6 +4,9 @@ thickness = 3;
 width = 20;
 // set length of stub to attach cylinder holder to
 stub_length = 30;
+// set stub cutout dimensions
+stub_cutout_depth = 21;
+stub_cutout_radius = 7;
 
 // rotate for printing
 rotate([0, 90, 0]) {
@@ -18,10 +21,15 @@ rotate([0, 90, 0]) {
 		// translate([0, 6, 88.4])
 		// cylinder(thickness, 16.4, 16.4, true);
 
-		// // Draw spool mount cylinder
-		translate([0, 0, stub_length / 2])
-		cylinder(stub_length, sqrt(width) * 2 + 1.5, sqrt(width) * 2 + 1.5, true);
-
+		// Draw spool mount stub as a cylinder and cutout notch
+		difference() {
+			translate([0, 0, stub_length / 2])
+			cylinder(stub_length, sqrt(width) * 2 + 1.5, sqrt(width) * 2 + 1.5, true);
+			// cut out a square to use as a join with the extension piece
+			translate([0, 0, stub_length])
+			cylinder(stub_cutout_depth, stub_cutout_radius, stub_cutout_radius, true); 
+		}
+	
 		// draw long edge of holder
 		translate([0, 40, thickness/2])
 		cube([width, 30+56, thickness], true);
