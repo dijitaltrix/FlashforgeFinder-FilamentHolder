@@ -12,9 +12,9 @@ width = 20;
 // translate([0, 6, 88.4])
 // cylinder(thickness, 16.4, 16.4, true);
 
-// // Draw spool mount cylinder
-translate([0, 5, 10])
-cube([width,15,20], true);
+		// // Draw spool mount cylinder
+		translate([0, 0, stub_length / 2])
+		cylinder(stub_length, sqrt(width) * 2 + 1.5, sqrt(width) * 2 + 1.5, true);
 
 // draw rounded edge of 
 cylinder(thickness, r=10, $fn=32);
