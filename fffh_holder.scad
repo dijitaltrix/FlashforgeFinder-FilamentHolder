@@ -1,5 +1,6 @@
-// set thickness
+// set thickness of part
 thickness = 3;
+// set width of part (to lay on chassis)
 width = 20;
 
 // // Draw spool mount cylinder
