@@ -2,6 +2,8 @@
 thickness = 3;
 // set width of part (to lay on chassis)
 width = 20;
+// set length of stub to attach cylinder holder to
+stub_length = 30;
 
 // // Draw spool mount cylinder
 // translate([0, 0, 45])
