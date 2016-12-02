@@ -22,15 +22,13 @@ rotate([0, 90, 0]) {
 		translate([0, 0, stub_length / 2])
 		cylinder(stub_length, sqrt(width) * 2 + 1.5, sqrt(width) * 2 + 1.5, true);
 
-// draw rounded edge of 
-cylinder(thickness, r=10, $fn=32);
+		// draw long edge of holder
+		translate([0, 40, thickness/2])
+		cube([width, 30+56, thickness], true);
 
-// draw long edge of holder
-translate([0, 40, thickness/2])
-cube([width, 28+55, thickness], true);
-
-translate([0, 80, -30])
-cube([width, thickness, 65], true);
+		// draw bar to lay horizontally on top of chassis
+		translate([0, 81.5, -32])
+		cube([width, thickness, 68], true);
 
 		// draw bar to hang vertically down the inside of the chassis
 		translate([0, 71.5, -64.5])
